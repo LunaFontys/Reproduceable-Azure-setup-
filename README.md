@@ -6,6 +6,10 @@ The goal was to learn how to create cloud infrastructure as code instead of manu
 
 The environment hosts an existing Dockerized web application on an Ubuntu VM.
 
+## Architecture
+<img width="845" height="632" alt="image" src="https://github.com/user-attachments/assets/4bd54ed4-f711-4dad-85d2-d2459bed1d55" />
+
+
 ## What this project creates
 
 Terraform creates:
