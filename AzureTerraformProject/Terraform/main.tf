@@ -1,7 +1,7 @@
 # Create the resource group
 resource "azurerm_resource_group" "project_rg" {
   name     = "rg-AzureTerraformProject"
-  location = "West Europe"
+  location = "polandcentral"
 }
 
 # Create the Virtual Network
@@ -88,7 +88,7 @@ resource "azurerm_linux_virtual_machine" "webapp_vm" {
   name                = "vm-AzureTerraformProject"
   resource_group_name = azurerm_resource_group.project_rg.name
   location            = azurerm_resource_group.project_rg.location
-  size                = "Standard_B1s"
+  size                = "Standard_B2ls_v2"
   admin_username      = "azureuser"
 
   network_interface_ids = [
@@ -128,7 +128,7 @@ resource "azurerm_linux_virtual_machine" "webapp_vm" {
     docker run \
       -d \
       --name webapp \
-      -p 80:8080 \
+      -p 80:3000 \
       --restart always \
       ${var.docker_image}
   EOF
